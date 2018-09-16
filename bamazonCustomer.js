@@ -1,5 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var Table = require("easy-table")
+
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -20,17 +22,28 @@ function askItemToBuy() {
 
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
+        var t = new Table
         for (let i = 0; i < res.length; i++) {
-            let price = parseFloat(res[i].price).toFixed(2)
-            console.log(res[i].item_id + ": " + res[i].product_name + "   $" + price)
+            //let price = parseFloat(res[i].price).toFixed(2)
+            //console.log(res[i].item_id + ": " + res[i].product_name + "   $" + price)
+            t.cell('Item ID', res[i].item_id)
+            t.cell('Product', res[i].product_name)
+            t.cell('Price',res[i].price, Table.number(2))
+            t.newRow()
         }
+        console.log(t.toString())
         inquirer.prompt({
             name: "itemChoice",
             type: "input",
-            message: "Please enter the ID of the item you like to buy: "
+            message: "Please enter the \"Item ID\" of the item you like to buy: "
         }).then(function (answer) {
             // console.log(answer.itemChoice)
-            verifyItem(answer.itemChoice)
+            
+            if (answer.itemChoice) {
+                verifyItem(answer.itemChoice)
+            } else {
+                askItemToBuy()
+            }
         })
     })
 }
@@ -55,7 +68,12 @@ function askQuantity(itemChoice, itemName) {
         type: "input",
         message: "Please enter the quantity of \"" + itemName + "\" you would like to purchase?"
     }).then(function (answer) {
-        verifyPurchase(itemChoice, itemName, answer.itemCountRequested)
+        if (answer.itemCountRequested) {
+            verifyPurchase(itemChoice, itemName, answer.itemCountRequested)
+        } else {
+            askQuantity(itemChoice, itemName)
+        }
+        
     })
 }
 
