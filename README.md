@@ -5,7 +5,7 @@
 An Amazon-like cli storefront app with a MySQL backend. This cli app will take in orders from customers and deplete stock from the store's inventory. This cli app will also track product sales across your store's departments and then provide a summary of the highest-grossing departments in the store.  This repository covers all three challenges of homework assignment:
 
 * Challenge #1: Customer View, see [Video 1](https://youtu.be/Hlifq7Ij1pw)
-* Challenge #2: Manager View, see [Video 2](https://youtu.be/oh6EJRU7fqw)(http://en.wikipedia.org/wiki/Markdown). 
+* Challenge #2: Manager View, see [Video 2](https://youtu.be/oh6EJRU7fqw)
 * Challenge #3: Supervisor View     see [Video 3](http://en.wikipedia.org/wiki/Markdown)
 * Updated Portfolio Page.    see [Portfolio Page](https://thatlostboy.github.io/Bootstrap-Portfolio/portfolio.html)
 
