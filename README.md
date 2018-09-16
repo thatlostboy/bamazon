@@ -6,7 +6,7 @@ An Amazon-like cli storefront app with a MySQL backend. This cli app will take i
 
 * Challenge #1: Customer View, see [Video 1](https://youtu.be/Hlifq7Ij1pw)
 * Challenge #2: Manager View, see [Video 2](https://youtu.be/oh6EJRU7fqw)
-* Challenge #3: Supervisor View     see [Video 3](http://en.wikipedia.org/wiki/Markdown)
+* Challenge #3: Supervisor View, see [Video 3](https://youtu.be/XaBGThO9N2o)
 * Updated Portfolio Page.    see [Portfolio Page](https://thatlostboy.github.io/Bootstrap-Portfolio/portfolio.html)
 
 Node packages used:
@@ -58,6 +58,9 @@ department_id, department_name, over_head_costs
 
 
 ### Challenge #3: Supervisor View (Final Level)
+* see video demo [Video 3](https://youtu.be/XaBGThO9N2o)
+   * first part walks through DB and prove product_sales column increase on purchase
+   * second part of same video shows bamazonSupervisor.js total_profit by department and ability to add new department
 * create table "Departments" 
 * create product_sales column and updates on purchases 
 * Create another Node app called bamazonSupervisor.js. Running this application will list a set of menu options:
