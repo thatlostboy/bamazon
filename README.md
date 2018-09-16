@@ -35,7 +35,7 @@ department_id, department_name, over_head_costs
 ## Details
 
 ### Challenge #1: Customer View (Minimum Requirement)
-* sql database and tables built with at least 10 mock data 
+* sql database and tables built with at least 10 mock data
 * create bamazomCustomer.js that will perform the following:     see [Video 1](http://en.wikipedia.org/wiki/Markdown)
   * show all items
   * prompt for item to buy
@@ -43,9 +43,28 @@ department_id, department_name, over_head_costs
   * check quantity requested against inventory, if not enough, refuse order.  If enough, fulfill order aby reducing the inentory
 
 ### Challenge #2: Manager View (Next Level)
+ * create bamazonManager.js that list a set of menu options:
+    * View Products for Sale
+    * View Low Inventory
+    * Add to Inventory
+    * Add New Product
+  * If a manager selects `View Products for Sale`, the app should list every available item: the item IDs, names, prices, and quantities.
+  * If a manager selects `View Low Inventory`, then it should list all items with an inventory count lower than five.
+  * If a manager selects `Add to Inventory`, your app should display a prompt that will let the manager "add more" of any item currently in the store.
+  * If a manager selects `Add New Product`, it should allow the manager to add a completely new product to the store.
+
 
 ### Challenge #3: Supervisor View (Final Level)
-
+* create table "Departments" 
+* create product_sales column and updates on purchases 
+* Create another Node app called bamazonSupervisor.js. Running this application will list a set of menu options:
+  * View Product Sales by Department
+    * show department_id, department_name, over_head_costs, product_sales, total_profit
+    * total_profit calculated on the fly, not stored.
+    * performed using this query:
+       > SELECT departments.department_id, departments.department_name, departments.over_head_costs, SUM(products.product_sales) as product_sales, SUM(products.product_sales) - departments.over_head_costs AS total_profit FROM departments INNER JOIN products ON departments.department_name = products.department_name
+GROUP BY departments.department_id;
+  * Create New Department
 
 ----
 ----
