@@ -2,24 +2,21 @@
 
 ----
 ## Overview
-Repository covers all three challenges of homework assignment:
+Aan Amazon-like cli storefront with a MySQL backend. This cli app will take in orders from customers and deplete stock from the store's inventory. This cli app will also track product sales across your store's departments and then provide a summary of the highest-grossing departments in the store.  This repository covers all three challenges of homework assignment:
 
 * Challenge #1: Customer View  see [Video 1](http://en.wikipedia.org/wiki/Markdown)
-* Challenge #2: Manager View see [Video 2](http://en.wikipedia.org/wiki/Markdown). 
+* Challenge #2: Manager View  see [Video 2](http://en.wikipedia.org/wiki/Markdown). 
 * Challenge #3: Supervisor View see [Video 3](http://en.wikipedia.org/wiki/Markdown)
 
-packages used:
+Node packages used:
 
 * mysql
 * inquirer
 * easy-table (console.table was easier but did not have formatting for the price)
 
 
-
-> Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz allowing people "to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)".
-
 ----
-## usage
+## Usage
 1. clone repository
 1. npm install
 1. run mySQL commands from lines 1 through 25 "bamazonCustomer.sql" to
@@ -35,25 +32,7 @@ department_id, department_name, over_head_costs
  * node bamazonSupervisor.js
 
 ----
-## markdown quick reference
-# headers
+## Details
 
-*emphasis*
 
-**strong**
-
-* list
-
->block quote
-
-    code (4 spaces indent)
-[links](http://wikipedia.org)
-
-----
-## changelog
-* 17-Feb-2013 re-design
-
-----
-## thanks
-* [markdown-js](https://github.com/evilstreak/markdown-js)
 
