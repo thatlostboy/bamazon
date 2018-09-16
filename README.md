@@ -62,8 +62,9 @@ department_id, department_name, over_head_costs
     * show department_id, department_name, over_head_costs, product_sales, total_profit
     * total_profit calculated on the fly, not stored.
     * performed using this query:
-       > SELECT departments.department_id, departments.department_name, departments.over_head_costs, SUM(products.product_sales) as product_sales, SUM(products.product_sales) - departments.over_head_costs AS total_profit FROM departments INNER JOIN products ON departments.department_name = products.department_name
-GROUP BY departments.department_id;
+       > SELECT departments.department_id, departments.department_name, departments.over_head_costs, SUM(products.product_sales) as product_sales, SUM(products.product_sales) - departments.over_head_costs AS total_profit 
+       > FROM departments INNER JOIN products ON departments.department_name = products.department_name
+       > GROUP BY departments.department_id;
   * Create New Department
 
 ----
