@@ -25,8 +25,8 @@ Node packages used:
   * create table "departments" with fields:  
 department_id, department_name, over_head_costs
 
-1. add in products and departments (manually with sql inserts, via csv import, or via bamazonManager.js and bamazonSupervisor.js)
-1. Run one of the three files
+4. add in products and departments (manually with sql inserts, via csv import, or via bamazonManager.js and bamazonSupervisor.js)
+5. Run one of the three files
  * node bamazonCustomer.js
  * node bamazonManager.js
  * node bamazonSupervisor.js
