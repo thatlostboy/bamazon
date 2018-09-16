@@ -4,9 +4,9 @@
 ## Overview
 Aan Amazon-like cli storefront with a MySQL backend. This cli app will take in orders from customers and deplete stock from the store's inventory. This cli app will also track product sales across your store's departments and then provide a summary of the highest-grossing departments in the store.  This repository covers all three challenges of homework assignment:
 
-* Challenge #1: Customer View  see [Video 1](http://en.wikipedia.org/wiki/Markdown)
-* Challenge #2: Manager View  see [Video 2](http://en.wikipedia.org/wiki/Markdown). 
-* Challenge #3: Supervisor View see [Video 3](http://en.wikipedia.org/wiki/Markdown)
+* Challenge #1: Customer View     see [Video 1](http://en.wikipedia.org/wiki/Markdown)
+* Challenge #2: Manager View     see [Video 2](http://en.wikipedia.org/wiki/Markdown). 
+* Challenge #3: Supervisor View     see [Video 3](http://en.wikipedia.org/wiki/Markdown)
 
 Node packages used:
 
@@ -36,7 +36,7 @@ department_id, department_name, over_head_costs
 
 ### Challenge #1: Customer View (Minimum Requirement)
 * sql database and tables built with at least 10 mock data 
-* create bamazomCustomer.js that will perform the following:   [Video 1](http://en.wikipedia.org/wiki/Markdown)
+* create bamazomCustomer.js that will perform the following:     see [Video 1](http://en.wikipedia.org/wiki/Markdown)
   * show all items
   * prompt for item to buy
   * prompt for quantity
