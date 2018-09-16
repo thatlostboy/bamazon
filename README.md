@@ -34,5 +34,9 @@ department_id, department_name, over_head_costs
 ----
 ## Details
 
+### Challenge #1: Customer View (Minimum Requirement)
 
 
+### Challenge #2: Manager View (Next Level)
+
+### Challenge #3: Supervisor View (Final Level)
