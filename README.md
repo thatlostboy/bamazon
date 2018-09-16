@@ -62,7 +62,7 @@ department_id, department_name, over_head_costs
    * first part walks through DB and prove product_sales column increase on purchase
    * second part of same video shows bamazonSupervisor.js total_profit by department and ability to add new department
 * create table "Departments" 
-* create product_sales column and updates on purchases 
+* create product_sales column. Ensure bamazonCustomer.js updates sales figure when purchase is made.  
 * Create another Node app called bamazonSupervisor.js. Running this application will list a set of menu options:
   * View Product Sales by Department
     * show department_id, department_name, over_head_costs, product_sales, total_profit
