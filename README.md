@@ -27,7 +27,7 @@ department_id, department_name, over_head_costs
 
 4. add in products and departments (manually with sql inserts, via csv import, or via bamazonManager.js and bamazonSupervisor.js)
 5. Run one of the three files
- * node bamazonCustomer.js
+ * node bamazonCustomer.js  
  * node bamazonManager.js
  * node bamazonSupervisor.js
 
@@ -35,7 +35,12 @@ department_id, department_name, over_head_costs
 ## Details
 
 ### Challenge #1: Customer View (Minimum Requirement)
-
+* sql database and tables built with at least 10 mock data 
+* create bamazomCustomer.js that will perform the following:   [Video 1](http://en.wikipedia.org/wiki/Markdown)
+  * show all items
+  * prompt for item to buy
+  * prompt for quantity
+  * check quantity requested against inventory, if not enough, refuse order.  If enough, fulfill order aby reducing the inentory
 
 ### Challenge #2: Manager View (Next Level)
 
