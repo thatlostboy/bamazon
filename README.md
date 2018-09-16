@@ -13,7 +13,7 @@ Node packages used:
 
 * mysql
 * inquirer
-* easy-table (console.table was easier but did not have formatting for the price)
+* easy-table (console.table was easier but did not have the two decimal formatting for numbers numbers.  eg. 20.00 versus 20)
 
 
 ----
