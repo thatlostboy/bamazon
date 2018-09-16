@@ -142,13 +142,18 @@ function askQuantity(itemChoice, itemName) {
         type: "input",
         message: "Please enter the quantity of \"" + itemName + "\" you are adding to the Inventory"
     }).then(function (answer) {
-        updateInventory(itemChoice, itemName, answer.itemCountRequested)
+        // updateInventory(itemChoice, itemName, answer.itemCountRequested)
+        if (answer.itemCountRequested) {
+            updateInventory(itemChoice, itemName, answer.itemCountRequested)
+        } else {
+            askQuantity(itemChoice, itemName)
+        }
     })
 }
 
 function updateInventory(itemChoice, itemName, itemCountRequested) {
     query = "UPDATE products SET stock_quantity = stock_quantity + " + itemCountRequested + "  WHERE item_id = " + itemChoice
-    console.log(query)
+    // console.log(query)
 
     connection.query(query, function (err, res) {
         if (err) throw err;

@@ -87,14 +87,14 @@ function verifyPurchase(itemChoice, itemName, itemCountRequested) {
         if (itemCountStock >= itemCountRequested) {
             itemCountStockUpdate = itemCountStock - itemCountRequested
             product_salesUpdate = res[0].product_sales + itemCountRequested * res[0].price
-            console.log(product_salesUpdate)
+            // console.log(product_salesUpdate)
 
             // purchase item by updating inventory and product_sales via query
             query = "UPDATE products SET stock_quantity = " + itemCountStockUpdate + ", product_sales = "+product_salesUpdate+" WHERE item_id = " + itemChoice
             // console.log(query
             connection.query(query, function (err, res) {
                 if (err) throw err;
-                console.log("You just purchased " + itemCountRequested + " \"" + itemName + "\"(s).")
+                console.log("You just purchased " + itemCountRequested + " \"" + itemName + "\"(s).\n\n\n")
                 setTimeout(askItemToBuy, 1000)
             })
         } else {
