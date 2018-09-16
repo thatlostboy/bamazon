@@ -18,11 +18,11 @@ connection.connect(function (err) {
 
 function askItemToBuy() {
 
-    connection.query("SELECT * FROM products", function(err, res){
+    connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
-        for (let i=0; i < res.length; i++) {
+        for (let i = 0; i < res.length; i++) {
             let price = parseFloat(res[i].price).toFixed(2)
-            console.log(res[i].item_id+ ": "+res[i].product_name + "   $"+price)
+            console.log(res[i].item_id + ": " + res[i].product_name + "   $" + price)
         }
         inquirer.prompt({
             name: "itemChoice",
@@ -36,14 +36,14 @@ function askItemToBuy() {
 }
 
 function verifyItem(itemChoice) {
-    query = "SELECT * FROM products where item_id = "+itemChoice
-    connection.query(query, function(err, res){
+    query = "SELECT * FROM products where item_id = " + itemChoice
+    connection.query(query, function (err, res) {
         if (err) throw err;
-        if (res.length > 0 ){
+        if (res.length > 0) {
             askQuantity(itemChoice, res[0].product_name);
         } else {
             console.log("item does not exists.  please select another item\n")
-            setTimeout(askItemToBuy,1000)
+            setTimeout(askItemToBuy, 1000)
         }
     })
 }
@@ -53,37 +53,37 @@ function askQuantity(itemChoice, itemName) {
     inquirer.prompt({
         name: "itemCountRequested",
         type: "input",
-        message: "Please enter the quantity of \""+itemName+"\" you would like to purchase?"
+        message: "Please enter the quantity of \"" + itemName + "\" you would like to purchase?"
     }).then(function (answer) {
-        verifyQuantity(itemChoice, itemName, answer.itemCountRequested)
+        verifyPurchase(itemChoice, itemName, answer.itemCountRequested)
     })
 }
 
 
-function verifyQuantity(itemChoice, itemName, itemCountRequested) {
-    query = "SELECT stock_quantity FROM products where item_id = "+itemChoice
-    
-    connection.query(query, function(err, res){
+function verifyPurchase(itemChoice, itemName, itemCountRequested) {
+    query = "SELECT * FROM products where item_id = " + itemChoice
+
+    connection.query(query, function (err, res) {
         if (err) throw err;
         itemCountStock = res[0].stock_quantity
         if (itemCountStock >= itemCountRequested) {
             itemCountStockUpdate = itemCountStock - itemCountRequested
-            purchaseItem(itemChoice, itemName, itemCountRequested, itemCountStockUpdate)
+            product_salesUpdate = res[0].product_sales + itemCountRequested * res[0].price
+            console.log(product_salesUpdate)
+
+            // purchase item by updating inventory and product_sales via query
+            query = "UPDATE products SET stock_quantity = " + itemCountStockUpdate + ", product_sales = "+product_salesUpdate+" WHERE item_id = " + itemChoice
+            // console.log(query
+            connection.query(query, function (err, res) {
+                if (err) throw err;
+                console.log("You just purchased " + itemCountRequested + " \"" + itemName + "\"(s).")
+                setTimeout(askItemToBuy, 1000)
+            })
         } else {
-            console.log("Sorry, we only have "+itemCountStock+ " \""+itemName+"\"s in stock.")
-            setTimeout(function(){
+            console.log("Sorry, we only have " + itemCountStock + " \"" + itemName + "\"s in stock.")
+            setTimeout(function () {
                 askQuantity(itemChoice, itemName)
             }, 1000)
         }
-    }) 
-}
-
-function purchaseItem(itemChoice, itemName, itemCountRequested, itemCountStockUpdate) {
-    query = "UPDATE products SET stock_quantity = "+itemCountStockUpdate +"  WHERE item_id = "+itemChoice
-    // console.log(query)
-    connection.query(query, function(err, res){
-        if (err) throw err;
-        console.log("You just purchased "+ itemCountRequested+" \""+itemName+"\"(s).")
-        setTimeout(askItemToBuy, 1000)
     })
 }
