@@ -7,7 +7,7 @@ An Amazon-like cli storefront app with a MySQL backend. This cli app will take i
 * Challenge #1: Customer View     see [Video 1](http://en.wikipedia.org/wiki/Markdown)
 * Challenge #2: Manager View     see [Video 2](http://en.wikipedia.org/wiki/Markdown). 
 * Challenge #3: Supervisor View     see [Video 3](http://en.wikipedia.org/wiki/Markdown)
-* Updated Portfolio Page.    see[Portfolio Page](https://thatlostboy.github.io/Bootstrap-Portfolio/portfolio.html)
+* Updated Portfolio Page.    see [Portfolio Page](https://thatlostboy.github.io/Bootstrap-Portfolio/portfolio.html)
 
 Node packages used:
 
